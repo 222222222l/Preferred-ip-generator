@@ -1,0 +1,25 @@
+name = "preferred-ip-generator"
+main = "src/index.js"
+compatibility_date = "2026-05-30"
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[kv_namespaces]]
+binding = "BEST_IP_KV"
+id = "replace-with-your-kv-namespace-id"
+preview_id = "replace-with-your-preview-kv-namespace-id"
+
+[vars]
+SOURCE_URL = "https://api.uouin.com/cloudflare.html"
+BANDWIDTH_THRESHOLD_MB = "100"
+MAX_RESULTS = "20"
+INCLUDE_IPV6 = "false"
+LINE_ALLOWLIST = ""
+PORT_CANDIDATES = "443,8443,2053,2083,2087,2096"
+FALLBACK_PORT = "443"
+REFRESH_INTERVAL_MINUTES = "30"
+REMARK_PREFIX = "CF"
+PORT_PROBE_HOST = ""
+SUBSCRIPTION_UPSTREAM = ""
+REFRESH_TOKEN = ""
